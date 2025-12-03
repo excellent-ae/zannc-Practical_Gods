@@ -1,23 +1,23 @@
 [config]
 schemaVersion = "0.0.1"
 
-
 [package]
 namespace = "zannc"
-name = "Practical_Gods"
-versionNumber = "1.0.1"
-description = "Ever felt like Artemis was a bit useless? Wanted to see her drop as a regular god? This mod adds in 4 of Artemis' Hades 1 boons, and allows her to spawn like a regular god, alongside adding some boons to Hermes to expand his arsenal"
-websiteUrl = "https://github.com/zanncdwbl/zannc-Practical_Gods"
+name = "Godly_Boon_Return"
+versionNumber = "2.0.0"
+description = ""
+websiteUrl = "https://github.com/excellent-ae/zannc-Practical_Gods"
 containsNsfwContent = false
 
 [package.dependencies]
-Hell2Modding-Hell2Modding = "1.0.45"
-SGG_Modding-ModUtil = "4.0.0"
-SGG_Modding-ENVY = "1.1.0"
+Hell2Modding-Hell2Modding = "1.0.70"
+SGG_Modding-ModUtil = "4.0.1"
+LuaENVY-ENVY = "1.2.0"
 SGG_Modding-Chalk = "2.1.1"
 SGG_Modding-ReLoad = "1.0.2"
 SGG_Modding-SJSON = "1.0.0"
-
+zannc-Droppable_Gods = "1.0.1"
+zannc-GodsAPI = "1.0.0"
 
 [build]
 icon = "./icon.png"
@@ -37,12 +37,16 @@ source = "./src"
 target = "./plugins"
 
 [[build.copy]]
+source = "./lovely"
+target = "./lovely"
+
+[[build.copy]]
 source = "./packages"
 target = "./plugins_data"
 
 [publish]
 repository = "https://thunderstore.io"
-communities = [ "hades-ii", ]
+communities = ["hades-ii"]
 
 [publish.categories]
-hades-ii = [ "mods", ]
+hades-ii = ["mods"]

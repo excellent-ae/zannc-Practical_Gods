@@ -1,0 +1,19 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "CombatLogic.lua"
+pattern = "triggerArgs.DamageAmount = triggerArgs.DamageAmount * 3"
+position = "at"
+payload = '''
+if HeroHasTrait("ArtemisCriticalBoon") then
+    local mult = GetHeroTrait("ArtemisCriticalBoon").AddOutgoingDamageModifiers.CritDamageBonus
+    triggerArgs.DamageAmount = triggerArgs.DamageAmount * (3 + (mult-1))
+else
+    triggerArgs.DamageAmount = triggerArgs.DamageAmount * 3
+end
+'''
+match_indent = true
+times = 1
